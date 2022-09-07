@@ -1,0 +1,48 @@
+body
+{
+/* baggrunden */
+background-size:cover;
+background-image: url(Space-Background-Image-2.jpeg)
+
+}
+
+/* navigationsbar*/
+.topnav {
+overflow: hidden;
+background-color: black;
+}
+.topnav a {
+float: left;
+display: block;
+color: beige;
+padding: 10px 30px;
+font-size: 18px;
+text-decoration: none;
+}
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Overksrift */
+#overskrift {
+margin-top: 330px;
+margin-left: 100px;
+text-align: left;
+font-size: 80px;
+font-family: Tahoma, Verdana, sans-serif;
+text-shadow: 5px 5px 6px white;  
+letter-spacing: 10px;
+line-height: 0.3px;
+}
+
+/* Tekst under overskrift */
+#undertekst {
+margin-top: 0px;
+margin-left: 100px;
+text-align: left;
+font-size: 20px;
+font-family: sans-serif;
+letter-spacing: 2px;
+line-height: 0.8;
+}
