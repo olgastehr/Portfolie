@@ -2,7 +2,7 @@ body
 {
 /* baggrunden */
 background:linear-gradient(#230068,#784BA0,#00109c);
-height:150vh;
+height:300vh;
 }
 
 /* navigationsbar*/
@@ -43,6 +43,7 @@ z-index: -1;
 .column.side {
 width: 70%;
 margin-left:10px;
+font-family: sans-serif;
 }
 
 /* kristina */
