@@ -2,7 +2,7 @@ body
 {
 /* baggrunden */
 background:linear-gradient(#230068,#784BA0,#00109c);
-height:300vh;
+background-repeat: no-repeat;
 }
 
 /* navigationsbar*/

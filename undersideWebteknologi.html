@@ -7,10 +7,15 @@
 <body>
     
 <div class="topnav">
-<a href="index.html">Portfolio</a>
+<a href="index.html">Forside</a>
 <a href="undersideWebteknologi.html">Webteknologi</a>
-<a href="">Forløb 2</a>
-<a href="">Forløb 3</a>
+<a href="projekt2.html">Min første hjemmeside</a>
+<a href="undersideITsikkerhed.html">IT-sikkerhed</a>
+<a href="undersideastropi.html">Astro-pi</a>
+<a href="undersideML.html">Machine Learning</a>
+<a href="undersideSpil.html">Spil, leg og samarbejde</a>
+<a href="undersideData.html">Databaser</a>
+
 </div>
     
 <div class="header"> 
@@ -20,6 +25,8 @@
     
 <div class="column side">
 <br> <br> 
+<p style="color:white;">I forløbet om webteknologier havde vi til formål at udarbejde vores egen hjemmeside i programmeringssproget html og css. Denne hjemmeside skulle senere hen fungere som vores portfolie for de kommende forløb for resten af året i informatik.Helt i starten af forløbet udarbejdede jeg som træning i programmeringssproget en anden hjemmeside. Denne kan findes under "Min første hjemmeside" i topbaren. </p>   
+
 <h1 style="color:white;">Dokumentation af kode:</h1>
 <p style="color:white;">Herunder vil der være eksempler og tilsvarende dokumentation på kode brugt i forløbet omhandlende webteknologier. Helt grundlæggende kan den simpleste html-hjemmeside opsættes på følgende måde:</p>
     
@@ -42,7 +49,28 @@
 <p style="color:white;">Mere "kompliceret" grafisk kode laves i en separat css-fil tilknyttet html-filen (som skrevet i øverste afsnit). Når vi f.eks. ønsker en baggrundsfarve kan denne indsættes ved først at definere hvilket område farven skal dække. I eksemplet herunder er f.eks. angivet at farven skal dække hele body. Farverne er angivet i en analog formel, hvor farver fra et farvehjul bruges. Den ønskede farve skal derfor angives i sin kodeform som det også ses. I dette eksempel er angivet 3 forskellige farver, og at de alle skal fade ud med hinanden med kommandoen grabiet: </p>
 <img src="farverkode.png" width="500">
 <br>
-
+<br>
+<h1 style="color:white;">Topnavigationsbar</h1>
+<p style="color:white;">Selve denne hjemmeside styres ved hjælp af en topnavigationsbar med links til alle undersider på hjemmesiden. Navigationsbaren er først lavet i html, hvorefter den er designet i css. Her kombineres de 2 sprog altså. I html-kodedelen startes der ud med "div"-kommandoen, som angiver at et nyt design på hjemmesiden starter. Herefter defineres det ved brug af "class"-kommandoen at designet skal være en "topnav" (topnavigationsbar). De forskellige undersider der i topbaren henvises til starter ud med "a", efterfulgt af href="#". Sidstnævnte bestemmer hvilket html-dokument der skal henvises til når man trykker på den angivne teks i topbaren. I de følgende linjer er altså henvist til links til alle undersiderne på denne hjemmeside. Til sidst lukkes vores "div"-kommando af igen, og et nyt design påbegyndes. HTML-koden ses herunder:</p>
+<img src="topnavhtml.png" width="500">
+<br>
+<br>  
+<p style="color:white;">Selve stylingen af topbaren er som sagt skrevet i det css-dokument der tideligere blev henvist til (forklaret under "dokumentation af kode"). Først angives det med ".topnav" at vi ønsker at redigere i vores topnavigationsbar. På næste linje (11) sikres det, at selv når hjemmesiden åbnes på en skærm i et andet format skal referencerne tilpasse sig denne skærm. Herefter defineres baggrundsfarven til "black".<br> 
+I næste del af koden angiver vi ved ".topnav a", at hver enkel boks i topbaren skal designes nu. a var jo netop det vi navngav hver af vores bokse i html-koden. Ønskede vi i stedet et individuelt design til hver boks kunne vi have navngivet dem hver især. Herunder er forklaret hver linje grundigt i koden:
+<br> 
+<br>- Linje 15: Det er bestemt at topbaren skal holde til venstre på siden
+<br>- Linje 16: Boksene i baren skal vises som blokke
+<br>- Linje 17: Farven når musen holdes over boksene er sat til beige 
+<br>- Linje 18: Størrelsen på boksene er bestemt til en antal pixels
+<br>- Linje 19: Skriftstørrelsen er angivet til 18 pixels
+<br>- Linje 20: Det er bestemt at der ingen tekstdekoration skal være
+<br>- Linje 22: Det angives at der nu arbejdes på topbarens hover, altså funktionen som gør at boksene skifter farve når musen holdes over
+<br>- Linje 23: Baggrundsfarven på boksen sættes til farvekoden #ddd, som er beige, når musen holdes over 
+<br>- Linje 24: Boksens farve sættes til sort når musen ikke holdes over  </p> 
+<img src="topnavcss.png" width="200">
+<br> 
+<br> 
+    
 </div>
 
     

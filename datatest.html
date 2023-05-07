@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+<body>
+<h1>Flashcard</h1>
+<p id="overskrift"></p>
+<p id="beskrivelse"></p>
+<button type="button" onclick="ny()">nyt spørgsmål</button>
+<button type="button" onclick="vis()">Vis svar</button>
+<p id="valg"></p>
+
+
+</body>
+</html>
+
+<script>
+  let x;
+  let FN;
+  let data;
+  var overskrift = null
+  var beskrivelse = null
+
+function quiz() {
+  var pic;
+  document.getElementById('valg').innerHTML = ""
+  x = Math.floor(Math.random()*4+1);
+  console.log(x);
+  genererTekst(x);
+  document.getElementById('overskrift').innerHTML = overskrift;
+}
+
+function genererTekst(x){
+  for (var i = 0; i < data.length; i++) {
+      if (data[i]["ID"] == x) {
+        spoergsmål = data[i]['spoergsmål']; 
+        svar = data[i]['svar'];
+        break; // exit efter loop
+      }
+    }
+}
+window.onload = function() {
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "FN.csv", true);
+xhr.responseType = "text";
+xhr.onload = function() {
+  data = Papa.parse(xhr.responseText, {
+    header: true // set this to true if the first row contains the header names
+  }).data;
+};
+xhr.send();
+}
+</script>

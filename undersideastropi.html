@@ -9,43 +9,118 @@
 <div class="topnav">
 <a href="index.html">Portfolio</a>
 <a href="undersideWebteknologi.html">Webteknologi</a>
+<a href="projekt2.html">Min første hjemmeside</a>
 <a href="undersideITsikkerhed.html">IT-sikkerhed</a>
 <a href="undersideastropi.html">Astro-pi</a>
+<a href="undersideML.html">Machine Learning</a>
+<a href="undersideSpil.html">Spil, leg og samarbejde</a>
+<a href="undersideData.html">Databaser</a>
 </div>
-    
+                                                                                                                                                                                                                                                
 <div class="header"> 
-<h1 style="color:white;">Atro-pi udfordring</h1>
-<img src="raspberryPi.png" id=rasberrypi width="75">
+<h1 style="color:white;">Astro-pi udfordring</h1>
+<img src="raspberryPi.png" id=cookie width="100">
 </div>
     
 <div class="column side">
 <br> <br> 
+    
+<p style="color:white;">Med ESA´s program Mission Space Lab gav de muligheden for, at os skoleelever kunne foretage eksperimenter i rummet. 2 Raspberry pi´s, udstyret med forskellige censorer, er placeret på rumstationen ISS. Gennem programmeringssproget python kan disse censorer kontrolleres, og forsøg på rumstationen blive foretaget. ESA udvalgte med fokus på en række specifikationer kun få grupper, der fik muligheden for at gå videre med deres projekt.</p>
+    
+<br>
+<br>
+    
 <h1 style="color:white;">Projektbeskrivelse</h1>
 <p style="color:white;">The point of our experiment is to test which plants are able to grow, given the external factors measured by the astropi’s sensors. We are gonna create a list of plants that are safe for consumption, with information about the temperature and humidity required for optimal plant growth for each of the listed plants. By comparing them with our measured data of temperature and humidity on the spacestation from the astro-pi’s sensors, we can determine which plants are able to grow in the environment on the space station. This can give us a better knowledge of becoming self-sufficient in space. We are gonna start out with using a smaller list of plants, about 2-3 different plants. as proof of concept, as having a longer list increases the chance of the experiment failing</p>
+
+<br>
+<br>
     
-<img src="simpelkode.png" width="500">
+<h1 style="color:white;">ESA´s specifikationer</h1>
+<p style="color:white;">Inden projektopstarten gav ESA os en række specifikationer og krav til forsøget:
+<br>
+<img src="esakrav.png" width="500">
+<br>
+<br> 
+I specifikationerne er der altså blandt andet givet følgende krav: 
+- “Must not require any additional equipment or access to anything else on the ISS.”
+<br> 
+Dette krav til projektet har været problematisk for vores ønskede eksperiment, da der er en vis usikkerhed i temperatursensorens præcision. Temperaturen bliver målt inde i vores pi, hvor der med høj sandsynlighed vil være varmere end et stykke væk fra computeren. Dette udgav altså en stor fejlkilde undervejs i udviklningen af projektet. Vi har gjort os nogle overvejelser og løsninger på problemet, og er kommet til følgende konklusion: Ved at udføre en række forsøg med sammenligningen af sensorerens målte temperatur og den realle temperatur i omgivelserne, fandt vi diffenrencen, og fremstillede en lineær regression. Den gennemsnitlige difference kunne hermes trækkes fra dataen for planterne</p>
     
 <br>
 <br>
-<h1 style="color:white;">ESA’s specifikationer</h1>
-<p style="color:white;">I ESA’s specifikationer er der givet følgende krav til projektet: “Must not require any additional equipment or access to anything else on the ISS.”
-Dette krav til projektet har været problematisk for vores ønskede eksperiment, da der er en vis usikkerhed i temperatursensorers præcision. Vi har gjort os nogle overvejelser og er kommet til den konklusion at det nemmeste var at trække differencen fra på dataen for planterne. 
- </p>
-<img src="tekstkode.png" width="500">
-<br>
-<br>
-<h1 style="color:white;">Nødvendige sensorer for udførelse af vores eksperimen</h1>
+    
+<h1 style="color:white;">Nødvendige sensorer for udførelse af vores eksperiment</h1>
 <p style="color:white;">The two sensors we will be using for the experiment are the Temperature sensor. We've also concluded the temperature from the senseHat isn't accurate enough for the experiment. We are also gonna use the data from the humidity sensor. We are gonna use the pi’s processor temperature sensor to compensate for the heat it transfers to our senseHat. We do this since the temperature of the pi’s components impact our sensor's result. We've concluded the temperature from the senseHat isn't accurate enough for the experiment. We are also gonna use the data from the humidity sensor.</p>
-<img src="billedekode.png" width="500">
+    
 <br>
-<br>
-<h1 style="color:white;">Temperatursensoren</h1>
-<p style="color:white;">...</p>
-<img src="farverkode.png" width="500">
 <br>
 
+<h1 style="color:white;">Måling af temperatur og luftfugtighed</h1>
+<p style="color:white;">Som skrevet ovenfor var det nødvendigt for os at måle både temperatur og luftfugtighed, for at kunne undersøge hvilke planter der har mulighed for at leve på rumstationen. Disse målinger foretog vi hvert 10 sekund. Kigger man på resultaterne af målingerne er der ikke betydelige forskelle fra måling til måling. Dette er naturligt eftersom højde osv på vores pi ikke ændrede sig, men forblev det samme sted. Flyttedes vores pi tættere på et åbent vindue var det klart at temperaturen faldt nogle grader.  </p>
+
+<br>
+<br>
+    
+<h1 style="color:white;">Gennemgang af kode</h1>
+<p style="color:white;">Alt kode blev, som angivet i ESA´s specifikationer, skrevet i prorgammeringssproget python. I linje 1-4 er skrevet de mest grundlæggende dele af vores kode, nemlig hvor vores data skal indhentes fra:
+<br>- Linje 1: Tidspunktet af målingen skal importeres
+<br>- Linje 2: Hvor ofte målingerne skal foretages er angivet under "sleep", som senere i linje 21 er sat til hvert 10 sekund.
+<br>- Linje 3: Sense-hat'en indsamler data om blandt andet temperatur og luftfugtighed, som vi skal bruge
+<br>- Linje 4: Fortæller at når der refereres til "sense", skal data indsamles fra sense-hat'en.
+</p>
+<img src="kode1.png" width="500">
+<br>
+<br>
+    
+    
+<p style="color:white;">Næste del af koden angiver hvornår vores målinger skal starte (linje 7-8). På linje 9 er det angivet forsøget varighed, altså 180 sekunder: 
+</p>
+<img src="kode2.png" width="500">
+<br>
+<br>
+    
+    
+<p style="color:white;">På linje 11 og 12 beder vi programmet om at åbne en ny fil, kaldet "test.csv". I filen beder vi yderligere om at få angivet tidspunktet for målingen, temperaturen og luftfugtigheden. Her kan vi altså se alt den indsamlede data fra sensorene. 
+<br>
+<br>
+<img src="kode3.png" width="500">
+<br>
+Åbner man filen "test.csv" ser den således ud: 
+</p> 
+<img src="kode4.png" width="500">
+<br>
+<br>
+
+
+<p style="color:white;">I linje 15 og 16 navngiver vi nu vores sensorer, så vi ikke hver gang der refereres til dem skal skrives hele navnet. Herefter defineres naturligvis hvilket navn der tilhører hvilken sensorer. Vi har valgt at kalde dem for henholdsvis h og t, for humidity og temperature:
+</p>
+<img src="kode5.png" width="500">
+<br>
+<br>
+    
+<p style="color:white;">Fra linje 23 og ned begynder selve forsøget med planterne. Hver plante har individuelle krav for levevilkår, og disse er indtastet i koden. Herunder er en gennemgang af koden for "kartofler":
+<br>- Linje 30: if-kommandoen benyttes når noget skal ske HVIS noget andet gælder. Her er det altså skrevet, at HVIS temperaturen er større eller lig 17 grader og mindre er lig 24 grader, og luftfugtigheden er større eller lig 45% og mindre er lig 60%, skal nedenstående (linje 31.32) gælde. Hvis ikke, skal linje 34-35 gælde.
+<br>- Linje 31-32: Hvis ovenstående if-kommando var sand, åbnes filen plante.csv, hvor teksten "forholdene for kartofler er gode" skrives. 
+<br>- Linje 33-35: Var if-kommandoen IKKE sand, skal filen plante.csv åbnes, og teksten "forholdene for kartfoler er ikke gode" skal skrives.
+</p>
+<img src="kodekartofler.png" width="500">
+<br>
+<p style="color:white;">Samme kode skrev vi ind for de resterende planter. Havde vi haft mere tid til at udarbejde koden havde det helt klart været relevant et simplificere koden og på den måde undgå alle disse gentagelser. Dette kunne vi have gjort ved at lave lister i stedet for at skrive hele koden op på ny hver gang. Alligevel fik vi ud fra den brugte kode angivet hvilke planter der under de nutidige forhold ville have mulighed for at leve, og hvilke der ikke ville i filen "plante.csv". Filen så altså således ud:
+</p>
+<img src="kodeplanter.png" width="500">    
 </div>
 
+<br>
+<br>     
+<h1 style="color:white;">Overholder vores projekt ESA's specifikationer?</h1>
+<p style="color:white;">Efter vores justeringer med målingen at temperaturen uden ekstra udstyr, vil vi mene at projektet overholder alle ESA's krav.</p>
+
+<br>
+<br>   
+<h1 style="color:white;">Flowchart over projektet</h1>
+<img src="flowchartpi.png" width="600"> 
     
+  
 </body>
 </html>
